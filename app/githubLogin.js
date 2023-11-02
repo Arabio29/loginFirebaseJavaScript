@@ -1,12 +1,12 @@
-import { FacebookAuthProvider, signInWithPopup } from "https://www.gstatic.com/firebasejs/10.4.0/firebase-auth.js";
+import { GithubAuthProvider, signInWithPopup } from "https://www.gstatic.com/firebasejs/10.4.0/firebase-auth.js";
 import { auth } from "./firebase.js";
 import { showAlert } from "./showAlert.js";
 
-const facebookButton = document.querySelector('#facebookLogin')
+const githubButton = document.querySelector('#githubLogin')
 
-facebookButton.addEventListener('click', async () => {
+githubButton.addEventListener('click', async () => {
 
-    const provider = new FacebookAuthProvider()
+    const provider = new GithubAuthProvider()
 
     try {
         const credentials = await signInWithPopup(auth, provider)
@@ -20,4 +20,4 @@ facebookButton.addEventListener('click', async () => {
     } catch (error) {
         console.log(error)
     }
-});
+})
